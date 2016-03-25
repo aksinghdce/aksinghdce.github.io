@@ -33,9 +33,15 @@
     <h1 class="lead">Once you start working on something, don't be afraid of failure and don't abandon it. People who work sincerely are the happiest.</h1>
     <p class="text-right ">Chanakya</p>
   </div>
+
+  <div>
+    <a href="#profile" role="button" class="btn btn-default">profile</a>
+    <a href="#myCarousel1" role="button" class="btn btn-default">blogs</a>
+    <a href="#myCarousel2" role="button" class="btn btn-default">tech blogs</a>
+  </div>
   
   <!-- Social media profile -->
-  <div class="row">
+  <div id="profile" class="row">
     <div class="col-xs-5 text-left">
       <h1 class="center-block ">Amit Kumar Singh</h1>
     </div>
@@ -96,6 +102,12 @@
         <img class="profile-image-border img-responsive" src="https://raw.githubusercontent.com/aksinghdce/aksinghdce.github.io/master/profile_image.png" alt="Profile picture aksinghdce">
     </div>
 
+  </div>
+
+  <div>
+    <a href="#profile" role="button" class="btn btn-default">profile</a>
+    <a href="#myCarousel1" role="button" class="btn btn-default">blogs</a>
+    <a href="#myCarousel2" role="button" class="btn btn-default">tech blogs</a>
   </div>
 
 <div>
@@ -245,6 +257,12 @@
 
         $(" .item > a ").on(" mouseleave ", function() {
             $( this ).removeClass("animated bounceIn");
+        });
+
+        $("#profile-btn").on("click", function(){
+            $('html,body').animate({
+                scrollTop: $("#profile").offset().top},
+                     'slow');
         });
 
     });
