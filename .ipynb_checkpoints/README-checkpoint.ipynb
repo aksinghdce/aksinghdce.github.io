@@ -6,7 +6,7 @@
    "source": [
     "# वैदिक गणित \n",
     "\n",
-    "<img src=\"FATHER-OF-VEDIC-MATHS.jpg\"></img>\n",
+    "![Father of Vedic Mathemtics](images/FATHER-OF-VEDIC-MATHS.jpg)\n",
     "\n",
     "रचयता : शंकराचार्य भारती कृष्ण तीर्थ जी महाराज। इन्होने २० वर्ष की आयु तक १२ से अधिक विषयों में मास्टर की डिग्री प्राप्त की थी.\n",
     "\n",
@@ -26,7 +26,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "<img src=\"book_recommendation.png\" width=50% height=50%/>"
+    "![Book Recommendation](images/book_recommendation.png)"
    ]
   },
   {
