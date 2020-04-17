@@ -4,7 +4,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# वैदिक गणित \n",
+    "# गुणा: Multiply \n",
     "\n",
     "![Father of Vedic Mathemtics](images/FATHER-OF-VEDIC-MATHS.jpg)\n",
     "\n",
