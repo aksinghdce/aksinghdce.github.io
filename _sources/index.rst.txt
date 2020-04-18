@@ -13,6 +13,7 @@ Welcome to yogeek's documentation!
    README.ipynb
    multiplication.ipynb
    Assignment1.ipynb
+   students/aakash/vocabulary.ipynb
 
 
 
