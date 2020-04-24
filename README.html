@@ -5,14 +5,14 @@
   <head>
     <meta charset="utf-8" />
     <title>वैदिक गणित &#8212; yogeek 1.0 दिग्दर्शिका</title>
-    <link rel="stylesheet" href="css/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="css/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="css/documentation_options.js"></script>
-    <script src="css/jquery.js"></script>
-    <script src="css/underscore.js"></script>
-    <script src="css/doctools.js"></script>
-    <script src="css/language_data.js"></script>
-    <script src="css/translations.js"></script>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
@@ -21,7 +21,7 @@
     <link rel="next" title="गुणा: Multiply" href="multiplication.html" />
     <link rel="prev" title="Welcome to yogeek&#39;s documentation!" href="index.html" />
    
-  <link rel="stylesheet" href="css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -36,11 +36,231 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="वैदिक-गणित">
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5.5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="वैदिक-गणित">
 <h1>वैदिक गणित<a class="headerlink" href="#वैदिक-गणित" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h1>
 <p><img alt="Father of Vedic Mathemtics" src="https://raw.githubusercontent.com/aksinghdce/aksinghdce.github.io/master/_images/FATHER-OF-VEDIC-MATHS.jpg" /></p>
 <p>रचयता : शंकराचार्य भारती कृष्ण तीर्थ जी महाराज। इन्होने २० वर्ष की आयु तक १२ से अधिक विषयों में मास्टर की डिग्री प्राप्त की थी.</p>
-<p>शंकराचार्य श्री निश्चलानंद सरस्वती जी महाराज कहते हैं की भारती कृष्ण जी महाराज ने गणित के सूत्र वेद से लिए हैं।</p>
+<p>शंकराचार्य श्री निश्चलानंद सरस्वती जी महाराज कहते हैं की भारती कृष्ण जी महाराज ने गणित के सूत्र वेद से लिए हैं। जाने यहाँ - <a class="reference external" href="https://youtu.be/OzwtI9epNGM">https://youtu.be/OzwtI9epNGM</a></p>
 <p>इस कक्षा की तैयारी प्रो. नरेंद्र पूरी , जो भारतीय प्रौद्योगिकी संस्थान, रूड़की में सिविल इंजीनियरिंग के प्रोफेसर हैं, द्वारा दिए गए यूट्यूब के लेक्चर को देख के की गयी है।</p>
 <p>नरेंद्र पूरी जी नें स्वयं भी अंग्रेजी में वैदिक गणित पर पुस्तक लिखी है जो की भारती कृष्ण तीर्थ जी महाराज के पुस्तक का संक्षेपिकरन है. भारती कृष्ण तीर्थ जी महाराज जी की पुस्तक का हिन्दी रॊपान्तरन् यह है .</p>
 <p><img alt="Book Recommendation" src="https://raw.githubusercontent.com/aksinghdce/aksinghdce.github.io/master/_images/book_recommendation.png" /></p>
@@ -82,6 +302,36 @@
 <h2>गृह कार्य<a class="headerlink" href="#गृह-कार्य" title="इस शीर्ष-पंक्ति की स्थायी कड़ी">¶</a></h2>
 <p>१. <span class="math notranslate nohighlight">\(\bar{४}३५\bar{२}\bar{७}२\)</span> को हमें या तो हम पूर्णतया रेखांक में बदल देंगे या हम पहले अंक को रेखांक रहित बना देंगे। २. रेखांक क्या है ? ३. विनकुलम क्या है ? ४. पूरक क्या है ? ५. एकाधिकेन पूर्वेण क्या है ? ६. निखलम् नवतः चरमम् दशतः क्या है ?</p>
 <hr class="docutils" />
+<p>द्विअंकीय प्रणाली की सिद्धि इन तीन सूत्रों से होती है :</p>
+<p>१. एकाधिकें पूर्वेण।</p>
+<p>२. एक न्यूनेन पूर्वेण।</p>
+<p>३. शिष्यते सेष संज्ञः।</p>
+<p>निश्चलानन्द् जी कहते हैं :</p>
+<p>संनिकट निर्विशेष से एकाधिक गुण वाले संनिकत सविशेष की उत्पत्ति होति है.</p>
+<p>“उपादेय की अपेक्षा उपादान सन्निकट निर्विशेष होना चाहिए” - श्री निश्चलानन्द सरस्वती जी</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>पृथ्वी में &quot;शब्द&quot;, &quot;स्पर्श&quot;, &quot;रूप&quot;, &quot;रस&quot;, &quot;गंध&quot; ; ये पांच गुण विध्य्यमान हैं। यदि छठा गन पृथ्वी में होता तो ५ की जगह ६ ज्ञान इन्द्रियाँ हमें प्राप्त होतीं।
+
+[प्रश्न : चमगादड़, या डॉलफिन-मछली में क्या वो छठी इन्द्रिय नहीं जिसे अंग्रेजी में &quot;सोनार&quot;, जो किंचित विशिष्ठ तरह की ध्वंनि तरंगें ही हैं जो टकरा कर फिर वापस आने पर सामने पायी स्थूल वस्तु से दूरी का भान होता है। यदि यह सत्य है की ये ध्वनि तरंगें ही हैं और इनकी जानकारी समझने वाली इन्द्रिय भी &quot;स्पर्श&quot; की श्रेणी में आएँगी, तो कोई प्रश्न नहीं। परन्तु यदि यह एक छठा गुण है तो कृपा कर समाधान करें।]
+</pre></div>
+</div>
+<p>गणना कि दृष्टि से प्रथम अंक १ है। स्थान की दृष्टि से प्रथम अंक ० है।</p>
+<hr class="docutils" />
+<p>गणित का प्रयोजन :</p>
+<p>१. प्रज्ञा शक्ति को विशद करना।</p>
+<p>२. व्यवहार को सुव्यवस्थित करना।</p>
+<p>३. मोक्ष मार्ग को प्रशस्त करना।</p>
+<hr class="docutils" />
+<p>निश्चलानंद सरस्वती जी ने ८ ग्रन्थ द्विअंकीय प्रणाली पर लिखी है। ये ग्रन्थ आधुनिक गणित में त्रुटि को सुधारने के लिए लिखे गए हैं।</p>
+<p>वैदिक गणित जो श्री भारती कृष्ण तीर्थ जी महाराज ने लिखी है , उसका एक विचित्र ढंग से व्याख्या लिखने का प्रयोजन निश्चलानंद जी महाराज का है। <a class="reference external" href="https://youtu.be/R8Eh4VfOHXQ">https://youtu.be/R8Eh4VfOHXQ</a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -107,6 +357,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">वैदिक गणित</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiplication.html">गुणा: Multiply</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Assignment1.html">Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="students/aakash/vocabulary.html">Aakash’s Vocabulary</a></li>
 </ul>
 
 <div class="relations">
