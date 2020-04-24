@@ -10,6 +10,7 @@ Welcome to yogeek's documentation!
    :maxdepth: 1
    :caption: Contents:
    
+   index.tex
    README.ipynb
    multiplication.ipynb
    Assignment1.ipynb
